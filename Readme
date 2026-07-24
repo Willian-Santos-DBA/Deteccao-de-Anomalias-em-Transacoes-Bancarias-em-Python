@@ -1,30 +1,70 @@
-# **Detecção de Anomalias em Transações Bancárias em Python**
+# 📊 Detecção de Anomalias em Transações Bancárias com Python
 
-Pipeline de Machine Learning completo e de ponta a ponta (*end-to-end*) desenvolvido para identificar fraudes e anomalias em transações financeiras utilizando algoritmos de classificação avançados e interpretabilidade de modelos[cite: 1].
+Pipeline de Machine Learning completo e de ponta a ponta (*end-to-end*) desenvolvido para identificar fraudes e anomalias em transações financeiras utilizando algoritmos de classificação avançados e interpretabilidade de modelos.
 
-## 📋 Sobre o Projeto
-Transações financeiras fraudulentas costumam representar uma parcela mínima do volume total de dados, gerando cenários de **classificação altamente desbalanceada**[cite: 1]. Este projeto aborda esse desafio aplicando técnicas de engenharia de atributos, balanceamento de dados, modelagem preditiva e explicabilidade para garantir alta sensibilidade na detecção de fraudes[cite: 1].
+---
 
-## 🛠️ Tecnologias e Ferramentas Utilizadas
-* **Linguagem:** Python[cite: 1]
-* **Manipulação e Análise de Dados:** Pandas, NumPy[cite: 1]
-* **Machine Learning:** Scikit-Learn, Imbalanced-Learn (SMOTE), XGBoost[cite: 1]
-* **Métricas e Validação:** ROC-AUC, Precision-Recall Curve, Classification Report, GridSearchCV[cite: 1]
-* **Explicabilidade:** SHAP (Shapley Additive exPlanations)[cite: 1]
-* **Ambiente:** Google Colab / Jupyter Notebook[cite: 1]
+## 📋 1. Sobre o Contexto e Desafio
 
-## ⚙️ Etapas do Pipeline Desenvolvido
-1. **Análise Exploratória:** Diagnóstico estatístico do desbalanceamento severo na variável alvo (`Class`)[cite: 1].
-2. **Feature Engineering:** Transformação logarítmica (`Amount_log`) para suavizar a assimetria dos valores monetários e padronização com `StandardScaler`[cite: 1].
-3. **Modelagem Baseline:** Implementação inicial de Regressão Logística e avaliação por curvas ROC e Precision-Recall[cite: 1].
-4. **Tratamento de Desbalanceamento:** Testes comparativos utilizando *Undersampling*, *Oversampling* (SMOTE) e pesos de classes ajustados (`class_weight` e `scale_pos_weight`)[cite: 1].
-5. **Modelagem Avançada:** Treinamento de modelos baseados em árvores e reforço de gradiente (Random Forest e XGBoost), combinados com otimização de hiperparâmetros via `GridSearchCV` focado em *Recall* e ajuste de limiar de decisão (*threshold* customizado)[cite: 1].
-6. **Explicabilidade (XAI):** Aplicação da biblioteca SHAP para decodificar a importância e o impacto individual das variáveis nas predições do XGBoost[cite: 1].
+* **Cenário do Problema:** 
+  * Transações financeiras fraudulentas representam uma parcela mínima do volume total de dados.
+  * Ocorre um forte cenário de **classificação altamente desbalanceada**, fazendo com que modelos convencionais ignorem a classe minoritária.
+* **Abordagem da Solução:**
+  * Aplicação de técnicas avançadas de engenharia de atributos.
+  * Estratégias robustas de balanceamento de dados e modelagem preditiva.
+  * Foco em alta sensibilidade (*recall*) para detecção eficiente de fraudes.
 
-## 📈 Principais Resultados e Conclusão
-O projeto demonstra que algoritmos de *Gradient Boosting* (como o XGBoost), aliados a estratégias adequadas de penalização de classes e métricas focadas em *Recall*, são altamente eficazes para mitigar falsos negativos em cenários de fraude. Adicionalmente, a integração com o **SHAP** eleva a solução a um patamar corporativo ao fornecer transparência total sobre os fatores de risco avaliados pelo modelo[cite: 1].
+---
 
-## 🚀 Como Executar o Projeto
-1. Clone o repositório ou baixe o arquivo `.ipynb`.
-2. Abra o arquivo no [Google Colab](https://colab.research.google.com/) ou em um ambiente Jupyter Notebook local.
-3. Execute as células sequencialmente. O conjunto de dados público de transações de cartão de crédito será carregado automaticamente via URL oficial[cite: 1].
+## 🛠️ 2. Tecnologias e Ferramentas Utilizadas
+
+* **Linguagem Principal:** 
+  * Python
+* **Manipulação e Análise de Dados:** 
+  * Pandas, NumPy
+* **Machine Learning & Balanceamento:** 
+  * Scikit-Learn, Imbalanced-Learn (SMOTE), XGBoost
+* **Métricas e Validação:** 
+  * ROC-AUC, Precision-Recall Curve, Classification Report, GridSearchCV
+* **Explicabilidade (XAI):** 
+  * SHAP (Shapley Additive exPlanations)
+* **Ambiente de Desenvolvimento:** 
+  * Google Colab / Jupyter Notebook
+
+---
+
+## ⚙️ 3. Etapas do Pipeline Desenvolvido
+
+* **Análise Exploratória:** 
+  * Diagnóstico estatístico inicial do desbalanceamento severo na variável alvo (`Class`).
+* **Feature Engineering:** 
+  * Transformação logarítmica (`Amount_log`) para suavizar a assimetria dos valores monetários.
+  * Padronização robusta utilizando `StandardScaler`.
+* **Modelagem Baseline:** 
+  * Implementação de Regressão Logística como linha de base estatística.
+  * Avaliação detalhada por curvas ROC e Precision-Recall.
+* **Tratamento de Desbalanceamento:** 
+  * Testes comparativos aplicados via *Undersampling*, *Oversampling* (SMOTE) e pesos de classes ajustados (`class_weight` / `scale_pos_weight`).
+* **Modelagem Avançada:** 
+  * Treinamento com Random Forest e XGBoost.
+  * Otimização de hiperparâmetros via `GridSearchCV` focado em *Recall* e ajuste de limiar de decisão (*threshold* customizado para `0.3`).
+* **Explicabilidade (XAI):** 
+  * Aplicação prática do SHAP para decodificar o impacto e a importância individual das variáveis nas predições do XGBoost.
+
+---
+
+## 📈 4. Principais Resultados e Conclusão
+
+* **Eficiência dos Modelos:** 
+  * Algoritmos de *Gradient Boosting* (como o XGBoost) aliados a estratégias adequadas de penalização de classes provaram ser altamente eficazes na mitigação de falsos negativos.
+* **Valor Corporativo:** 
+  * A integração com o **SHAP** eleva a solução ao padrão corporativo, fornecendo total transparência e interpretabilidade sobre os fatores de risco avaliados pelo modelo.
+
+---
+
+## 🚀 5. Como Executar o Projeto
+
+* **Passo a Passo:**
+  1. Clone o repositório ou faça o download direto do arquivo `.ipynb`.
+  2. Abra o arquivo no [Google Colab](https://colab.research.google.com/) ou em seu ambiente Jupyter Notebook local.
+  3. Execute as células de forma sequencial. O conjunto de dados público de transações de cartão de crédito será baixado automaticamente através da URL oficial.
