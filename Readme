@@ -1,4 +1,4 @@
-## Detecção de Anomalias em Transações Bancárias em Python ##
+# **Detecção de Anomalias em Transações Bancárias em Python**
 
 Pipeline de Machine Learning completo e de ponta a ponta (*end-to-end*) desenvolvido para identificar fraudes e anomalias em transações financeiras utilizando algoritmos de classificação avançados e interpretabilidade de modelos[cite: 1].
 
